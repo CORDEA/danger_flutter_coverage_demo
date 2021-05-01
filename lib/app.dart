@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import 'document_repository.dart';
 import 'home.dart';
 
 void main() {
@@ -14,7 +16,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(title: 'Flutter Demo Home Page'),
+      home: Provider(
+        create: (_) => DocumentRepository(),
+        child: HomePage(),
+      ),
     );
   }
 }
