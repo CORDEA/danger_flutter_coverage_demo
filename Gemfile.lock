@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/CORDEA/danger-flutter_coverage
-  revision: f9a64eca70b1e08112bb7e504e721c81b41c7e26
+  revision: b695e7712de40c4b730ec5a23b38fcb24a233d2c
   branch: main
   specs:
     danger-flutter_coverage (0.0.1)
