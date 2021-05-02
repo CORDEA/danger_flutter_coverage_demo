@@ -1,0 +1,17 @@
+name: Run tests on PR
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/actions/install-dependencies
+      - name: Run test
+        run: flutter test --coverage
+      - name: Report the coverage
+        run: DANGER_GITHUB_API_TOKEN=${{ secrets.GITHUB_TOKEN }} bundle exec danger
